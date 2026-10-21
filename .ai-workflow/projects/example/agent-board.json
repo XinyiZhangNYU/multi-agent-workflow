@@ -1,0 +1,17 @@
+{
+  "project": "Example",
+  "project_root": "../../..",
+  "port": 8765,
+  "display_time_zone": "UTC",
+  "stale_seconds": 86400,
+  "display_ttl_seconds": 604800,
+  "max_events": 100000,
+  "max_task_board_bytes": 10485760,
+  "max_task_board_summary_bytes": 32768,
+  "max_task_board_cache_bytes": 67108864,
+  "max_task_board_receipts": 100000,
+  "max_database_bytes": 268435456,
+  "max_outbox_events": 1000,
+  "max_outbox_bytes": 8388608,
+  "snapshots": []
+}

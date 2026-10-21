@@ -1,0 +1,13 @@
+# Machine-local workflow state: session IDs, locks, pending checkpoints.
+.ai-workflow/runtime/
+.ai-workflow/LOCK
+
+# Raw task material, briefs and audit reports stay local by default.
+scratch/
+
+# Local build/runtime noise.
+__pycache__/
+*.py[cod]
+node_modules/
+.DS_Store
+Thumbs.db

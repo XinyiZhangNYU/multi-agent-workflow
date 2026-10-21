@@ -1,0 +1,8 @@
+# The canonical startup contract and its deployed copies must stay byte-identical
+# on every platform, so all of them are checked out with LF.
+.ai-workflow/startup-contract/STARTUP-CONTRACT.md text eol=lf
+/CLAUDE.md text eol=lf
+/AGENTS.md text eol=lf
+
+# Windows PowerShell sources keep their UTF-8 BOM; Git normalizes line endings only.
+*.ps1 text eol=crlf

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="board-page-token" content="__PAGE_TOKEN__"><title>Agent Board</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script><script defer src="/views.js"></script><script defer src="/task-board.js"></script></head>
+<body>
+<a class="skip" href="#views">Skip to content</a>
+<div id="workspace">
+  <header class="app-header"><div class="brand"><span class="brand-mark" aria-hidden="true"></span><strong>Agent Board</strong><span class="subtle" id="direction" hidden></span></div>
+    <nav class="view-tabs" aria-label="Views"><button type="button" class="view-tab" data-view="brief">Brief<span class="tab-count" id="tab-count-brief"></span></button><button type="button" class="view-tab" data-view="agents">Who's working<span class="tab-count" id="tab-count-agents"></span></button><button type="button" class="view-tab" data-view="feed">Feed</button><button type="button" class="view-tab" data-view="list">All tasks</button></nav>
+    <div class="status-line"><span id="connection">Reading local state…</span><button class="button" id="refresh">Refresh</button></div></header>
+  <div id="error" class="error" role="alert" hidden></div>
+  <div id="outbox-banner" class="outbox-banner" role="status" hidden></div>
+  <div id="views">
+  <main class="view-page" id="brief-view" data-view="brief" hidden><div id="brief" class="brief"><p class="empty">Reading…</p></div></main>
+  <main class="view-page" id="agents-view" data-view="agents" hidden><div id="agents" class="agents-view"><p class="empty">Reading…</p></div></main>
+  <main class="view-page" id="feed-view" data-view="feed" hidden><div class="feed-filters" id="feed-filters"><button type="button" class="chip" data-feed="all">All</button><button type="button" class="chip" data-feed="ask">Questions and closes</button><button type="button" class="chip" data-feed="done">Finished</button><button type="button" class="chip" data-feed="delivery">Deliveries</button></div><div id="feed" class="feed"><p class="empty">Reading…</p></div></main>
+  <div class="board-shell" id="progress-view" data-view="list" hidden>
+    <aside class="stream-sidebar" aria-label="Workstream navigation"><h1>Workstreams</h1><nav id="stream-nav" aria-label="Choose a workstream"></nav></aside>
+    <main class="main-workspace">
+      <section class="global-attention" aria-label="Needs you"><div class="section-head"><h2>Needs you</h2><span id="attention-count" class="subtle"></span></div><div id="attention" class="human-attention"></div><div id="undeclared" class="undeclared" hidden></div></section>
+      <section aria-labelledby="tasks-title" class="task-section"><header class="stream-heading"><h2 id="tasks-title">All workstreams</h2><div class="heading-tools"><span id="visible-count" class="subtle"></span><label class="old-toggle"><input id="show-old" type="checkbox">Show old tasks <span id="old-count"></span></label></div></header>
+        <div class="stream-summary" id="stream-summary"></div>
+        <div class="filters"><label class="search-field">Search current scope<input id="search" type="search" placeholder="Title or task_id" autocomplete="off"></label><label>Run status<select id="status"><option value="">All statuses</option></select></label><label>Agent<select id="agent"><option value="">All agents</option></select></label><label class="attention-filter">Attention<select id="attention-filter"><option value="">All tasks</option><option value="human">Needs you</option><option value="dependency">Dependency / blocked</option><option value="verify">Notices (not a to-do for you)</option></select></label><button id="clear-filters" class="button">Clear local filters</button><select id="workstream" hidden aria-label="Current workstream"><option value="">All workstreams</option></select></div>
+        <div id="tasks" aria-busy="true"><p class="empty">Reading tasks and sources…</p></div>
+      </section>
+    </main>
+  </div>
+  </div>
+  <footer class="page-footer"><div class="clock"><span id="refresh-time">Not refreshed yet</span><span id="read-time">State read time unknown</span></div></footer>
+</div>
+<section id="detail" class="detail-panel" hidden aria-labelledby="detail-title" tabindex="-1"><header class="detail-header"><div><p class="eyebrow">Task / plan / execution / audit / evidence</p><h2 id="detail-title">Task detail</h2><div id="detail-id" class="mono subtle"></div></div><button id="close-detail" class="icon-button" aria-label="Close task detail">×</button></header><div id="detail-body" class="detail-body"></div></section>
+</body></html>

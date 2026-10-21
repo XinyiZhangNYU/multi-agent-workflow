@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "project_root": "../../..",
+  "canonical": "../../startup-contract/STARTUP-CONTRACT.md",
+  "targets": [
+    { "label": "root/CLAUDE.md", "path": "CLAUDE.md" },
+    { "label": "root/AGENTS.md", "path": "AGENTS.md" }
+  ]
+}
